@@ -2,6 +2,7 @@ import argparse
 import time
 from virusshare import VirusShare
 
+# Create an instance of PyVirusShare
 v = VirusShare('XXXX')  # Replace 'XXXX' with your VirusShare API key
 
 def download_samples_from_file(file_path, destination_folder, max_retries=3, rate_limit_pause=60, request_interval=15):
@@ -31,6 +32,7 @@ def download_samples_from_file(file_path, destination_folder, max_retries=3, rat
         print(f"Error reading file: {e}")
 
 if __name__ == "__main__":
+    # Set up argument parser
     parser = argparse.ArgumentParser(description='Download malware samples from VirusShare by providing a hash file and destination folder.')
     parser.add_argument('hash_file', type=str, help='Path to the file containing the hashes.')
     parser.add_argument('destination_folder', type=str, help='Directory where the samples will be downloaded.')
